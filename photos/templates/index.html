@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{block.super}}
+<div class="container">
+    <hr>
+    <h3 class="p2 text-center fs-1"><span class="text-info">MY GALLERY</span>
+    </h3>
+    <hr>
+
+
+    <div class="col-md-12">
+        <div class="card-group">
+            {%for image in images%}
+            <div class="card"
+                 style="min-width: 15rem; max-width:18rem ;margin-top: 30px; margin-bottom: 30px; margin-right: 3rem;">
+                <a href="/image/{{image.id}}"><img src="{{ image.image.url }}" style="height: 14rem;" class="card-img-top" alt="Image"></a>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}
+</div>
