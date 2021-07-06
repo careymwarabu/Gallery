@@ -19,6 +19,13 @@ from decouple import config,Csv
 import cloudinary.uploader
 import cloudinary.api
 
+cloudinary.config( 
+  cloud_name = "dvnq8iwfs", 
+  api_key = "654829185384754", 
+  api_secret = "W6PpdAIj131akBUwlCY0ffQmjK8",
+)
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -144,8 +151,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles'),
+STATIC_URL = '/static/'
+
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
@@ -164,12 +172,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # configuring the location for media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-cloudinary.config( 
-  cloud_name = "dvnq8iwfs", 
-  api_key = "654829185384754", 
-  api_secret = "W6PpdAIj131akBUwlCY0ffQmjK8",
-)
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
